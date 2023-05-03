@@ -1,0 +1,22 @@
+{
+    "manifest_version": 2,
+    "name": "Extension test",
+    "content_scripts": [],
+    "description": "Premier test d'extensions",
+    "version": "1.0",
+    "permissions": [
+        "http://*/*",
+        "https://*/*"
+    ],
+    "browser_action": {
+        "default_popup": "Popup/popup.html"
+    },
+    "icons": {
+        "128": "Img/morse.png"
+    },
+    "background": {
+        "scripts": [
+            "Popup/popup js/monscript.js"
+        ]
+    }
+}
