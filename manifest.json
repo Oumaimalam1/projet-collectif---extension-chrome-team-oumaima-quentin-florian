@@ -1,7 +1,19 @@
 {
     "manifest_version": 2,
     "name": "Extension test",
-    "content_scripts": [],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Accueil_principal"
+            ],
+            "css": [
+                "mystyles.css"
+            ],
+            "js": [
+                "myscript.js"
+            ]
+        }
+    ],
     "description": "Premier test d'extensions",
     "version": "1.0",
     "permissions": [
