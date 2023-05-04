@@ -104,16 +104,5 @@ for (i = 0; i < close.length; i++) {
 }
 
 function dropAll() {
-    var span = document.createElement("SPAN");
-  var txt = document.createTextNode("o");
-  span.className = "select";
-  span.appendChild(txt);
-  newLi.appendChild(span);
-
-  for (i = 0; i < select.length; i++) {
-    select[i].onclick = function() {
-      var div = this.parentElement;
-      div.style.display = "none";
-    }
-  }
+    
 }
