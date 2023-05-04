@@ -1,38 +1,23 @@
 {
-    "manifest_version": 3,
+    "manifest_version": 2,
     "name": "Extension test",
-    "content_scripts": [
-        {
-            "matches": [
-                "https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Accueil_principal"
-            ],
-            "css": [
-                "mystyles.css"
-            ],
-            "js": [
-                "myscript.js"
-            ]
-        }
-    ],
+    "content_scripts": [],
     "description": "Premier test d'extensions",
-    "version": "1.0",
-    "optional_host_permissions": [
+    "version": "2.0",
+    "permissions": [
         "http://*/*",
-        "https://*/*"
+        "https://*/*",
+        "storage"
     ],
-    "action": {
+    "browser_action": {
         "default_popup": "Popup/popup.html"
     },
     "icons": {
         "128": "Img/morse.png"
     },
-    "commands": {
-        "_execute_action": {
-          "suggested_key": {
-            "windows": "Ctrl+Shift+O",
-            "mac": "Command+Shift+O"
-          }
-        }
+    "background": {
+        "scripts": [
+            "Popup/popup js/monscript.js"
+        ]
     }
-    
 }

@@ -1,22 +1,46 @@
-<!-- <script src="popup js/monscript.js"></script>
-<link rel="stylesheet" href="popup css/style_popup.css">
-<h1>Bonjour</h1>
-<label class="switch">
-    <input type="checkbox">
-    <span class="slider round"></span>
-</label> -->
-
-<link rel="stylesheet" href="style.css">
+<!DOCTYPE html>
 <html>
-    <body>
-        <h1>Gestionnaire de taches</h1>
-        <input type="text" id="input"/>
-        <div class="grp_btn">
-            <button class="button" onclick="getInput()">ajouter</button>
-            <button class="button">modifier</button>
-            <button class="button">URGENT</button>
-            <button class="button">clear</button>
-        </div>       
-    </body>   
+
+<head>
+    <meta charset="UTF-8">
+    <title>Extension avec des boutons à bascule</title>
+    <link rel="stylesheet" href="popup css/style_popup.css">
+</head>
+
+<body>
+    <h1>Bonjour</h1>
+    <h2>Choississez une fonctionnalité</h2>
+    <div class="toggle-container">
+        <div class="inline">
+            <label class="switch">
+                <input type="checkbox" id="fonctionnalite1">
+                <span class="slider round"></span>
+            </label>
+            <span class="label">Géneration mot de passe</span>
+        </div>
+
+        <div class="inline">
+            <label class="switch">
+                <input type="checkbox" id="fonctionnalite2">
+                <span class="slider round"></span>
+            </label>
+            <span class="label">To do list</span>
+        </div>
+
+        <div class="inline">
+            <label class="switch">
+                <input type="checkbox" id="fonctionnalite3">
+                <span class="slider round"></span>
+            </label>
+            <span class="label">Dictionnaire</span>
+        </div>
+    </div>
+
+    <input type="text" id="taille">
+    <button class="button">Génerer</button>
+    <p id="mdp"></p>
+
+    <script src="popup js/monscript.js"></script>
+</body>
+
 </html>
-<script src="script.js"></script>
