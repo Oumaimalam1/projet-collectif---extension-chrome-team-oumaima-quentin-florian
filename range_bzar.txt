@@ -1,0 +1,170 @@
+//recup l'input
+function getInput() {
+    const input = document.querySelector('input').innerText
+    //ajoutInput(input)
+    return input
+    //console.log(input);
+}
+
+//ajout de la tache
+function ajoutInput() {
+    let newDiv = document.body.createElement('div')
+    let newContent = document.body.createTextNode(input)
+    
+
+    newDiv.appendChild(newContent)
+
+    let currentDiv = document.getElementById('div1')
+    document.body.insertBefore(newDiv, currentDiv)
+}
+
+function be() {
+    document.getElementById('div1').innerHTML = getInput() 
+} 
+
+// function addInput(input) {
+//     let newDiv = document.createElement("div")
+//     let newContent = document.createTextNode(input)
+
+//     newDiv.appendChild(newContent)
+
+//     let currentDiv = document.getElementById("div1")
+//     document.body.insertBefore(newDiv, currentDiv)
+// }
+
+// function ajoutInput(input) {
+//     let newText = document.createTextNode(input)
+//         div1 = document.getElementById('div1')
+
+//     div1.appendChild(newText)
+// }
+
+var myNodelist = document.getElementsByTagName("LI");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  myNodelist[i].appendChild(span);
+}
+
+// Click on a close button to hide the current list item
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
+
+// Add a "checked" symbol when clicking on a list item
+var list = document.querySelector('ul');
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
+  }
+}, false);
+
+// Create a new list item when clicking on the "Add" button
+function newElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInput").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("You must write something!");
+  } else {
+    document.getElementById("myUL").appendChild(li);
+  }
+  document.getElementById("myInput").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const evl = document.getElementById("add")
+// evl.addEventListener("click", addTask)
+
+// //function pour ajouter des taches
+// function addTask() {
+//     let newLi = document.createElement("li")
+//     let input = document.getElementById("input").value
+//     let text = document.createTextNode(input)
+//     newLi.appendChild(text)
+
+//     if (input === '')
+//         alert("met les oeufs sur la poelle")
+//     else
+//         document.getElementById("allUl").appendChild(newLi)
+//         //localStorage.setItem(newLi)
+
+//     document.getElementById("input").value = ""
+
+//     var span = document.createElement("SPAN");
+//     var txt = document.createTextNode("\u00D7");
+//     span.className = "close";
+//     span.appendChild(txt);
+//     li.appendChild(span);
+  
+//     for (i = 0; i < close.length; i++) {
+//       close[i].onclick = function() {
+//         var div = this.parentElement;
+//         div.style.display = "none";
+//       }
+//     }
+// }
+
+// var myNodelist = document.getElementsByTagName("LI");
+// var i;
+// for (i = 0; i < myNodelist.length; i++) {
+//   var span = document.createElement("SPAN");
+//   var txt = document.createTextNode("\u00D7");
+//   span.className = "close";
+//   span.appendChild(txt);
+//   myNodelist[i].appendChild(span);
+// }
+
+// var close = document.getElementsByClassName("close");
+// var i;
+// for (i = 0; i < close.length; i++) {
+//   close[i].onclick = function() {
+//     var div = this.parentElement;
+//     div.style.display = "none";
+//   }
+// }
+
+// add.onclick = () => {
+//     localStorage.setItem("ajout", allUl.value)
+// }
+
+
