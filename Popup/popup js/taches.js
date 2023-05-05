@@ -9,7 +9,7 @@ function addTask() {
   newLi.appendChild(text);
 
   if (input === '') {
-    alert("You must write something!");
+    alert("faites un effort :)");
   } else {
     document.getElementById("allUl").appendChild(newLi);
   }
@@ -27,7 +27,9 @@ function addTask() {
       div.style.display = "none";
     }
   }
+  check(newLi)
 }
+
 
 var myNodelist = document.getElementsByTagName("li");
 var i;
@@ -35,16 +37,6 @@ for (i = 0; i < myNodelist.length; i++) {
   let span = document.createElement("SPAN");
   let txt = document.createTextNode("\u00D7");
   span.className = "close";
-  span.appendChild(txt);
-  myNodelist[i].appendChild(span);
-}
-
-var myNodelist = document.getElementsByTagName("li");
-var i;
-for (i = 0; i < myNodelist.length; i++) {
-  let span = document.createElement("SPAN");
-  let txt = document.createTextNode("o");
-  span.className = "";
   span.appendChild(txt);
   myNodelist[i].appendChild(span);
 }
@@ -58,6 +50,18 @@ for (i = 0; i < close.length; i++) {
   }
 }
 
+
+//ceci cree des boutons dit "checkbox" pour selectionner un ou plusieurs elements
+function check(newLi) {
+
+  var radio = document.createElement("input");
+  var txt = document.createTextNode("O");
+  radio.type = "checkbox"
+  radio.appendChild(txt);
+  newLi.appendChild(radio);
+}
+
+
 //fonction qui supprime tout les li avec le bouton "clear all"(il peut changer de nom :) )
 const drp = document.getElementById("drop")
 drp.addEventListener("click", dropAll)
@@ -67,5 +71,11 @@ function dropAll() {
     for(var i=0; li=lis[i]; i++) {
         li.parentNode.removeChild(li);
     }
+}
+
+
+//function qui permet de mettre en evidance des taches
+function tache_urgente() {
+  
 }
 
