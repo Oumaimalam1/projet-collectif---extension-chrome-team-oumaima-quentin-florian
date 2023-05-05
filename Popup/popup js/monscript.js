@@ -28,7 +28,8 @@ window.onload = function () {
 };
 
 function generatePassword(length) {
-    const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+~`|}{[]:;?><,./-=";
+    const charset =
+        "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+~`|}{[]:;?><,./-=";
     let password = "";
     for (let i = 0; i < length; i++) {
         password += charset.charAt(Math.floor(Math.random() * charset.length));
@@ -36,7 +37,7 @@ function generatePassword(length) {
     return password;
 }
 
-document.getElementById("mdp").innerHTML = generatePassword(15)
+document.getElementById("mdp").innerHTML = generatePassword(15);
 
 // Récupère le bouton de génération de mot de passe et le champ de saisie de la longueur du mot de passe
 var genererButton = document.querySelector(".button");
