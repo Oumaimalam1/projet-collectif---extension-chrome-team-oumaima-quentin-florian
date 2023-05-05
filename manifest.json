@@ -1,10 +1,10 @@
 {
-  "manifest_version":2,
+  "manifest_version":3,
   "name": "Extension test",
   "content_scripts": [],
   "description": "Premier test d'extensions",
   "version": "14657.0",
-  "optional_host_permissions":["http://*/*", "https://*/*", "storage"],
+  "optional_host_permissions":["http://*/*", "https://*/*"],
   "action": {
       "default_popup": "Popup/popup.html"
   },
