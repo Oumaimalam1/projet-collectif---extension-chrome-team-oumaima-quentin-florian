@@ -1,5 +1,5 @@
 body {
-  width: 250px;
+  width: 260px;
   background-color: rgb(255, 255, 255);
 }
 
@@ -21,12 +21,17 @@ p {
   display: inline-block;
   width: 60px;
   height: 34px;
+  margin-bottom: 3px;
+}
+
+.inline {
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+  display: none;
 }
 
 .slider {
@@ -37,8 +42,8 @@ p {
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+  -webkit-transition: .4s;
+  transition: .4s;
 }
 
 .slider:before {
@@ -49,19 +54,19 @@ p {
   left: 4px;
   bottom: 4px;
   background-color: rgb(0, 0, 0);
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+  -webkit-transition: .4s;
+  transition: .4s;
 }
 
-input:checked + .slider {
-  background-color: #2196f3;
+input:checked+.slider {
+  background-color: #2196F3;
 }
 
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196f3;
+input:focus+.slider {
+  box-shadow: 0 0 1px #2196F3;
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
@@ -75,6 +80,10 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
+.label {
+  margin-left: 10px;
+}
+
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@300;400;500&display=swap");
 
 #searchBar {
@@ -83,11 +92,13 @@ input:checked + .slider:before {
   border-radius: 6px;
   overflow: hidden;
 }
+
 #searchBar input {
   width: 100%;
   border: 0;
   outline: 0;
 }
+
 #searchBar button {
   width: 100%;
   border: 0;
@@ -95,6 +106,7 @@ input:checked + .slider:before {
   color: #fff;
   cursor: pointer;
 }
+
 .res {
   background-color: #fff;
   margin-top: 10px;
@@ -112,6 +124,7 @@ input:checked + .slider:before {
     transform: translateY(100px);
   }
 }
+
 span {
   color: #7f56da;
 }
