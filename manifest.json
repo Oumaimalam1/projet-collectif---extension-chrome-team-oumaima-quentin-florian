@@ -4,22 +4,20 @@
   "content_scripts": [],
   "description": "Premier test d'extensions",
   "version": "14657.0",
-  "optional_host_permissions":["http://*/*", "https://*/*"],
+  "optional_host_permissions":["http://*/*", "https://*/*", "storage"],
   "action": {
       "default_popup": "Popup/popup.html"
   },
   "icons": {
       "128": "Img/morse.png"
   },
-  "commands": {
-      "_execute_action": {
-        "suggested_key": {
-          "windows": "Ctrl+Shift+O",
-          "mac": "Command+Shift+O"
-        }
+  "_execute_action": {
+    "suggested_key": {
+      "windows": "Ctrl+Shift+O",
+      "mac": "Command+Shift+O"
+    }
   },
   "background": {
-      "scripts": ["Popup/popup js/monscript.js"]
-  }
+    "service_worker": "Popup/popup js/monscript.js" 
   }
 }
