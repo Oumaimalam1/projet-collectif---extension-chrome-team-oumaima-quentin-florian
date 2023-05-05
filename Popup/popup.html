@@ -35,17 +35,24 @@
       </div>
     </div>
 
+    <h1>Génerateur</h1>
     <input type="text" id="taille" />
     <button class="button">Génerer</button>
     <p id="mdp"></p>
 
-    <h1>Dictionnaire</h1>
-    <div class="dicoapp">
-      <div id="searchBar">
-        <input type="text" id="text" placeholder="rechercher" />
-        <button onclick="search()">search</button>
+    <div class="modal" id="modal">
+      <div class="modal-back"></div>
+      <div class="modal-container">
+        <h1>Dictionnaire</h1>
+        <div class="dicoapp">
+          <div id="searchBar">
+            <input type="text" id="text" placeholder="rechercher" />
+            <button class="btn" id="searchDic">search</button>
+          </div>
+          <div id="resultat"></div>
+        </div>
+        <button id="modal-close">fermer</button>
       </div>
-      <div id="resultat"></div>
     </div>
 
 <html>
@@ -63,6 +70,7 @@
         </ul>
     </body>   
     <script src="popup js/taches.js"></script>
+    <script src="popup js/dictionary.js"></script>
+    <script src="popup js/monscript.js"></script>
   </body>
-  <script src="popup js/monscript.js"></script>
 </html>
