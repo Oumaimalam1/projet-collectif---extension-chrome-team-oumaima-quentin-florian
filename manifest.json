@@ -6,7 +6,9 @@
     "version": "14657.0",
     "optional_host_permissions": [
         "http://*/*",
-        "https://*/*",
+        "https://*/*"
+    ],
+    "permissions": [
         "storage"
     ],
     "action": {

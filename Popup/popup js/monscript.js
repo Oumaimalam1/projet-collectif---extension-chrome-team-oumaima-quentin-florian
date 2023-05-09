@@ -8,9 +8,8 @@ function generatePassword(length) {
     return password;
 }
 
-// document.getElementById("mdp").innerHTML = generatePassword(15);
-
 // Récupère le bouton de génération de mot de passe et le champ de saisie de la longueur du mot de passe
+
 var genererButton = document.querySelector(".button");
 var tailleInput = document.querySelector("#taille");
 
@@ -22,7 +21,27 @@ genererButton.addEventListener("click", function () {
     // Génère un mot de passe aléatoire
     var password = generatePassword(length);
 
+    chrome.storage.session.set({ Mdp: password }).then(() => {
+        console.log("Value is set to " + password);
+    });
+
+    chrome.storage.session.get(["Mdp"]).then((password) => {
+        console.log("Value currently is " + password.key);
+    });
+
     // Affiche le mot de passe généré dans la page
     var mdpElement = document.querySelector("#mdp");
     mdpElement.textContent = password;
 });
+
+// Stocke le mot de passe généré dans le stockage de session
+chrome.storage.session.set({ Mdp: password }).then(() => {
+    console.log("Value is set to " + password);
+});
+
+// Récupère le mot de passe stocké à partir du stockage de session
+chrome.storage.session.get(["Mdp"]).then((result) => {
+    console.log("Value currently is " + result.Mdp);
+});
+
+
