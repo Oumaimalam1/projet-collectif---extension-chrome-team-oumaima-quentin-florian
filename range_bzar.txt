@@ -168,3 +168,356 @@ function newElement() {
 // }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Extension avec des boutons à bascule</title>
+    <link rel="stylesheet" href="popup css/style_popup.css" />
+  </head>
+
+  <body>
+    <h1>Bonjour</h1>
+    <h2>Choississez une fonctionnalité</h2>
+    <div class="toggle-container">
+      <div class="inline">
+        <label class="switch">
+          <input type="checkbox" id="fonctionnalite1" />
+          <span class="slider round"></span>
+        </label>
+        <span class="label">Géneration mot de passe</span>
+      </div>
+
+      <div class="inline">
+        <label class="switch">
+          <input type="checkbox" id="fonctionnalite2" />
+          <span class="slider round"></span>
+        </label>
+        <span class="label">To do list</span>
+      </div>
+
+      <div class="inline">
+        <label class="switch">
+          <input type="checkbox" id="fonctionnalite3" />
+          <span class="slider round"></span>
+        </label>
+        <span class="label">Dictionnaire</span>
+      </div>
+    </div>
+
+    <input type="text" id="taille" />
+    <button class="button">Génerer</button>
+    <p id="mdp"></p>
+
+    <h1>Dictionnaire</h1>
+    <div class="dicoapp">
+      <div id="searchBar">
+        <input type="text" id="text" placeholder="rechercher" />
+        <button onclick="search()">search</button>
+      </div>
+      <div id="resultat"></div>
+    </div>
+
+<html>
+    <body>
+        <h1>Gestionnaire de taches</h1>
+        <input type="text" id="input"/>
+        <div class="grp_btn">
+            <button class="button" id="add">ajouter</button>
+            <button class="button">modifier</button>
+            <button class="button">cocher</button>
+            <button class="button" id="drop">clear all</button>
+        </div>       
+        <ul id="allUl">
+            <li></li>
+        </ul>
+    </body>   
+    <script src="popup js/taches.js"></script>
+  </body>
+  <script src="popup js/monscript.js"></script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const evl = document.getElementById("add")
+evl.addEventListener("click", addTask)
+
+// ajout de tache(s)
+function addTask() {
+  var newLi = document.createElement("li");
+  var input = document.getElementById("input").value;
+  var text = document.createTextNode(input);
+  newLi.appendChild(text);
+
+  if (input === '') {
+    alert("You must write something!");
+  } else {
+    document.getElementById("allUl").appendChild(newLi);
+  }
+  document.getElementById("input").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  newLi.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+}
+
+var myNodelist = document.getElementsByTagName("li");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  let span = document.createElement("SPAN");
+  let txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  myNodelist[i].appendChild(span);
+}
+
+var myNodelist = document.getElementsByTagName("li");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  let span = document.createElement("SPAN");
+  let txt = document.createTextNode("o");
+  span.className = "";
+  span.appendChild(txt);
+  myNodelist[i].appendChild(span);
+}
+
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
+
+//fonction qui supprime tout les li avec le bouton "clear all"(il peut changer de nom :) )
+const drp = document.getElementById("drop")
+drp.addEventListener("click", dropAll)
+
+function dropAll() {
+    var lis = document.querySelectorAll('#allUl li');
+    for(var i=0; li=lis[i]; i++) {
+        li.parentNode.removeChild(li);
+    }
+}
+
+
+
+<!---------------------------------------------------------------------->
+const evl = document.getElementById("add")
+evl.addEventListener("click", addTask)
+
+
+function tache_fini() {
+  
+  var list = document.querySelector('ul');
+  list.addEventListener('click', function(ev) {
+    if (ev.target.tagName === 'li') {
+      ev.target.classList.toggle('checked');
+    }
+  }, false);
+  }
+
+// ajout de tache(s)
+function addTask() {
+  var newLi = document.createElement("li");
+  var input = document.getElementById("input").value;
+  var text = document.createTextNode(input);
+  newLi.appendChild(text);
+  newLi.className = "checked"
+
+  if (input === '') {
+    alert("faites un effort :)");
+  } else {
+    document.getElementById("allUl").appendChild(newLi);
+  }
+  document.getElementById("input").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  newLi.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+  check(newLi)
+}
+
+
+var myNodelist = document.getElementsByTagName("li");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  let span = document.createElement("SPAN");
+  let txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  myNodelist[i].appendChild(span);
+}
+
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
+
+
+//ceci cree des boutons dit "checkbox" pour selectionner un ou plusieurs elements
+function check(newLi) {
+
+  var radio = document.createElement("input");
+  var txt = document.createTextNode("O");
+  radio.type = "checkbox"
+  radio.id = "myCheckbox"
+  radio.appendChild(txt);
+  newLi.appendChild(radio);
+}
+
+
+// fonction qui permet de verifier si une checkbox est activée ou non
+// function checkCheckbox() {
+//   var checkbox = document.getElementById("myCheckbox");
+  
+//   if (checkbox.checked) {
+//     console.log("La case est activée.");
+//   } else {
+//     console.log("La case n'est pas activée.");
+//   }
+// }
+
+
+//fonction qui supprime tout les li avec le bouton "clear all"(il peut changer de nom :) )
+const drp = document.getElementById("drop")
+drp.addEventListener("click", dropAll)
+
+function dropAll() {
+    var lis = document.querySelectorAll('#allUl li');
+    for(var i=0; li=lis[i]; i++) {
+        li.parentNode.removeChild(li);
+    }
+}
+
+
+//function qui permet de mettre en evidance des taches
+// function tache_urgente() {
+//   if ()
+// }
+
+
+
+//fonction qui met en rouge le texte quand il est cliqué
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const modifierButton = document.querySelector('.modifier-button');
+
+// modifierButton.addEventListener('click', () => {
+//   console.log('Modifier button clicked!');
+
+// });
+
+
