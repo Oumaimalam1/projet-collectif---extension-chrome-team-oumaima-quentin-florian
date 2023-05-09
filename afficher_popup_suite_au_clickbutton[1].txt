@@ -1,0 +1,78 @@
+afficher popup suite au clickbutton
+
+partie html 
+
+  <div class="modal" id="modal">
+      <div class="modal-back"></div>
+      <div class="modal-container">
+        <h1>Dictionnaire</h1>
+        <div class="dicoapp">
+          <div id="searchBar">
+            <input type="text" id="text" placeholder="rechercher" />
+            <button class="btn" id="searchDic">search</button>
+          </div>
+          <div id="resultat"></div>
+        </div>
+        <button id="modal-close">fermer</button>
+      </div>
+    </div>
+
+
+
+
+partie js
+
+  .getElementById("fonctionnalite3")
+  .addEventListener("click", function (e) {
+    var checkbox = e.target;
+    if (checkbox.checked) {
+      document.getElementById("modal").style.display = "block";
+    } else {
+      document.getElementById("modal").style.display = "none";
+    }
+  });
+
+document.getElementById("modal-close").addEventListener("click", function (e) {
+  document.getElementById("modal").style.display = "none";
+});
+
+
+
+
+partie css
+
+.modal {
+  display: none;
+}
+.modal-back {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.25);
+}
+.modal-container {
+  position: fixed;
+  width: 210px;
+  height: 410px;
+  top: 50%;
+  left: 50%;
+  padding: 25px;
+  background: white;
+  transform: translate(-50%, -50%);
+}
+
+#modal-close {
+  background-color: red; /* couleur de fond */
+  border: none; /* suppression de la bordure */
+  color: white; /* couleur de police */
+  padding: 4px 10px; /* rembourrage */
+  bottom: 15px;
+  position: absolute;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 3px;
+  box-shadow: 0px 2px 2px #888888;
+}
