@@ -57,17 +57,23 @@
 
 <html>
     <body>
-        <h1>Gestionnaire de taches</h1>
-        <input type="text" id="input"/>
-        <div class="grp_btn">
-            <button class="button" id="add">ajouter</button>
-            <button class="button">modifier</button>
-            <button class="button">URGENT</button>
-            <button class="button" id="drop">clear all</button>
-        </div>       
-        <ul id="allUl">
-            <li></li>
-        </ul>
+      <header>
+        <h1>To do list</h1>
+        <form id="new-task-form">
+          <input type="text" name="new-task-input" id="new-task-input" placeholder="que souhaitez vous faire" />
+          <input type="submit"id="new-task-submit" value="ajouter" />
+        </form>
+      </header>
+      <main>
+        <section class="task-list">
+          <h2>Taches</h2>
+    
+          <div id="tasks">
+    
+    
+          </div>
+        </section>
+      </main>
     </body>   
     <script src="popup js/taches.js"></script>
     <script src="popup js/dictionary.js"></script>
