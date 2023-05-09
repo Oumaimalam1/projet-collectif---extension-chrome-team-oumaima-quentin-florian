@@ -21,27 +21,17 @@ genererButton.addEventListener("click", function () {
     // Génère un mot de passe aléatoire
     var password = generatePassword(length);
 
+    // Stocke le mot de passe généré dans le stockage de session
     chrome.storage.session.set({ Mdp: password }).then(() => {
         console.log("Value is set to " + password);
     });
 
-    chrome.storage.session.get(["Mdp"]).then((password) => {
-        console.log("Value currently is " + password.key);
+    // Récupère le mot de passe stocké à partir du stockage de session
+    chrome.storage.session.get(["Mdp"]).then((result) => {
+        console.log("Value currently is " + result.Mdp);
     });
 
     // Affiche le mot de passe généré dans la page
     var mdpElement = document.querySelector("#mdp");
     mdpElement.textContent = password;
 });
-
-// Stocke le mot de passe généré dans le stockage de session
-chrome.storage.session.set({ Mdp: password }).then(() => {
-    console.log("Value is set to " + password);
-});
-
-// Récupère le mot de passe stocké à partir du stockage de session
-chrome.storage.session.get(["Mdp"]).then((result) => {
-    console.log("Value currently is " + result.Mdp);
-});
-
-
