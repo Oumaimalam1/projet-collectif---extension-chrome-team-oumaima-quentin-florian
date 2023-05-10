@@ -35,12 +35,18 @@
       </div>
     </div>
 
-    <h1>Génerateur</h1>
-    <input type="text" id="taille" />
-    <button class="button">Génerer</button>
-    <p id="mdp"></p>
+    <div class="modal" id="modalGen">
+      <div class="modal-back"></div>
+      <div class="modal-container">
+        <h1>Génerateur mot de passe</h1>
+        <input type="text" id="taille"placeholder="tapez la taille en chiffre" />
+        <button class="button">Génerer</button>
+        <p id="mdp"></p>
+         <button class="modal-close" id="modal-gen-close">fermer</button>
+      </div>
+    </div>
 
-    <div class="modal" id="modal">
+    <div class="modal" id="modalDic">
       <div class="modal-back"></div>
       <div class="modal-container">
         <h1>Dictionnaire</h1>
@@ -51,13 +57,16 @@
           </div>
           <div id="resultat"></div>
         </div>
-        <button id="modal-close">fermer</button>
+        <button class="modal-close" id="modal-dic-close">fermer</button>
       </div>
     </div>
 
 <html>
     <body>
-      <header>
+      <div class="modal" id="modalTask">
+      <div class="modal-back"></div>
+      <div class="modal-container">
+        <header>
         <h1>To do list</h1>
         <form id="new-task-form">
           <input type="text" name="new-task-input" id="new-task-input" placeholder="que souhaitez vous faire" class="inputToDoList" />
