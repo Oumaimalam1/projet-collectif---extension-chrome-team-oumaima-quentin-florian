@@ -1,3 +1,20 @@
+document
+  .getElementById("fonctionnalite1")
+  .addEventListener("click", function (e) {
+    var checkbox = e.target;
+    if (checkbox.checked) {
+      document.getElementById("modalGen").style.display = "block";
+    } else {
+      document.getElementById("modalGen").style.display = "none";
+    }
+  });
+document
+  .getElementById("modal-gen-close")
+  .addEventListener("click", function (e) {
+    document.getElementById("modalGen").style.display = "none";
+    document.getElementById("fonctionnalite1").checked = false;
+  });
+
 // Fonction qui est appelée lorsque la page est chargée
 window.onload = function () {
   // Récupère les boutons de commutation

@@ -6,15 +6,18 @@ document
   .addEventListener("click", function (e) {
     var checkbox = e.target;
     if (checkbox.checked) {
-      document.getElementById("modal").style.display = "block";
+      document.getElementById("modalDic").style.display = "block";
     } else {
-      document.getElementById("modal").style.display = "none";
+      document.getElementById("modalDic").style.display = "none";
     }
   });
 
-document.getElementById("modal-close").addEventListener("click", function (e) {
-  document.getElementById("modal").style.display = "none";
-});
+document
+  .getElementById("modal-dic-close")
+  .addEventListener("click", function (e) {
+    document.getElementById("modalDic").style.display = "none";
+    document.getElementById("fonctionnalite3").checked = false;
+  });
 
 function searchDic() {
   let word = document.getElementById("text").value;
