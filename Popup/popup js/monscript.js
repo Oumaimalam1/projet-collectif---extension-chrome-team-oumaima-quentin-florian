@@ -8,30 +8,75 @@ function generatePassword(length) {
     return password;
 }
 
-// Récupère le bouton de génération de mot de passe et le champ de saisie de la longueur du mot de passe
+function savePassword(password) {
+    // Récupère les mots de passe déjà générés
+    chrome.storage.local.get('passwords', function (data) {
+        var passwords = data.passwords || [];
 
-var genererButton = document.querySelector(".button");
-var tailleInput = document.querySelector("#taille");
+        // Ajoute le nouveau mot de passe à la liste
+        passwords.push(password);
 
-// Ajoute un gestionnaire d'événement de clic au bouton de génération de mot de passe
-genererButton.addEventListener("click", function () {
-    // Récupère la longueur du mot de passe entrée par l'utilisateur
-    var length = parseInt(tailleInput.value);
+        // Stocke les mots de passe mis à jour dans le local storage
+        chrome.storage.local.set({ 'passwords': passwords }, function () {
+            console.log('Mot de passe enregistré :', password);
+        });
+    });
+}
 
-    // Génère un mot de passe aléatoire
-    var password = generatePassword(length);
+function loadPasswords() {
+    // Récupère les mots de passe déjà générés
+    chrome.storage.local.get('passwords', function (data) {
+        var passwords = data.passwords || [];
 
-    // Stocke le mot de passe généré dans le stockage de session
-    chrome.storage.session.set({ Mdp: password }).then(() => {
-        console.log("Value is set to " + password);
+        // Affiche les mots de passe dans la page
+        var passwordList = document.getElementById('passwordList');
+        passwordList.innerHTML = '';
+
+        passwords.forEach(function (password, index) {
+            var listItem = document.createElement('li');
+            listItem.textContent = password;
+
+            var deleteButton = document.createElement('button');
+            deleteButton.textContent = 'Supprimer';
+            deleteButton.addEventListener('click', function () {
+                deletePassword(index);
+            });
+
+            listItem.appendChild(deleteButton);
+            passwordList.appendChild(listItem);
+        });
+    });
+}
+
+function deletePassword(index) {
+    // Supprime le mot de passe à l'index spécifié de la liste
+    chrome.storage.local.get('passwords', function (data) {
+        var passwords = data.passwords || [];
+
+        if (index >= 0 && index < passwords.length) {
+            passwords.splice(index, 1); // Supprime l'élément à l'index spécifié
+            chrome.storage.local.set({ 'passwords': passwords }, function () {
+                console.log('Mot de passe supprimé');
+                loadPasswords(); // Recharge la liste des mots de passe après la suppression
+            });
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    var genererButton = document.querySelector(".button");
+    var tailleInput = document.querySelector("#taille");
+
+    genererButton.addEventListener("click", function () {
+        var length = parseInt(tailleInput.value);
+        var password = generatePassword(length);
+        var mdpElement = document.querySelector("#mdp");
+        mdpElement.textContent = password;
+
+        savePassword(password);
+        loadPasswords(); // Recharge la liste des mots de passe après en avoir ajouté un nouveau
     });
 
-    // Récupère le mot de passe stocké à partir du stockage de session
-    chrome.storage.session.get(["Mdp"]).then((result) => {
-        console.log("Value currently is " + result.Mdp);
-    });
-
-    // Affiche le mot de passe généré dans la page
-    var mdpElement = document.querySelector("#mdp");
-    mdpElement.textContent = password;
+    loadPasswords();
 });
+

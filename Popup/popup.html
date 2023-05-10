@@ -1,82 +1,88 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Extension avec des boutons à bascule</title>
-    <link rel="stylesheet" href="popup css/style_popup.css" />
-  </head>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Extension avec des boutons à bascule</title>
+  <link rel="stylesheet" href="popup css/style_popup.css" />
+</head>
+
+<body>
+  <h1>Bonjour</h1>
+  <h2>Choississez une fonctionnalité</h2>
+  <div class="toggle-container">
+    <div class="inline">
+      <label class="switch">
+        <input type="checkbox" id="fonctionnalite1" />
+        <span class="slider round"></span>
+      </label>
+      <span class="label">Géneration mot de passe</span>
+    </div>
+
+    <div class="inline">
+      <label class="switch">
+        <input type="checkbox" id="fonctionnalite2" />
+        <span class="slider round"></span>
+      </label>
+      <span class="label">To do list</span>
+    </div>
+
+    <div class="inline">
+      <label class="switch">
+        <input type="checkbox" id="fonctionnalite3" />
+        <span class="slider round"></span>
+      </label>
+      <span class="label">Dictionnaire</span>
+    </div>
+  </div>
+
+  <h1>Génerateur</h1>
+  <input type="text" id="taille" />
+  <button class="button">Génerer</button>
+  <p id="mdp"></p>
+
+  <p>Mots de passe générés</p>
+  <ul id="passwordList"></ul>
+
+  <div class="modal" id="modal">
+    <div class="modal-back"></div>
+    <div class="modal-container">
+      <h1>Dictionnaire</h1>
+      <div class="dicoapp">
+        <div id="searchBar">
+          <input type="text" id="text" placeholder="rechercher" />
+          <button class="btn" id="searchDic">search</button>
+        </div>
+        <div id="resultat"></div>
+      </div>
+      <button id="modal-close">fermer</button>
+    </div>
+  </div>
+
+  <html>
 
   <body>
-    <h1>Bonjour</h1>
-    <h2>Choississez une fonctionnalité</h2>
-    <div class="toggle-container">
-      <div class="inline">
-        <label class="switch">
-          <input type="checkbox" id="fonctionnalite1" />
-          <span class="slider round"></span>
-        </label>
-        <span class="label">Géneration mot de passe</span>
-      </div>
+    <header>
+      <h1>To do list</h1>
+      <form id="new-task-form">
+        <input type="text" name="new-task-input" id="new-task-input" placeholder="que souhaitez vous faire" />
+        <input type="submit" id="new-task-submit" value="ajouter" />
+      </form>
+    </header>
+    <main>
+      <section class="task-list">
+        <h2>Taches</h2>
 
-      <div class="inline">
-        <label class="switch">
-          <input type="checkbox" id="fonctionnalite2" />
-          <span class="slider round"></span>
-        </label>
-        <span class="label">To do list</span>
-      </div>
+        <div id="tasks">
 
-      <div class="inline">
-        <label class="switch">
-          <input type="checkbox" id="fonctionnalite3" />
-          <span class="slider round"></span>
-        </label>
-        <span class="label">Dictionnaire</span>
-      </div>
-    </div>
 
-    <h1>Génerateur</h1>
-    <input type="text" id="taille" />
-    <button class="button">Génerer</button>
-    <p id="mdp"></p>
-
-    <div class="modal" id="modal">
-      <div class="modal-back"></div>
-      <div class="modal-container">
-        <h1>Dictionnaire</h1>
-        <div class="dicoapp">
-          <div id="searchBar">
-            <input type="text" id="text" placeholder="rechercher" />
-            <button class="btn" id="searchDic">search</button>
-          </div>
-          <div id="resultat"></div>
         </div>
-        <button id="modal-close">fermer</button>
-      </div>
-    </div>
-
-<html>
-    <body>
-      <header>
-        <h1>To do list</h1>
-        <form id="new-task-form">
-          <input type="text" name="new-task-input" id="new-task-input" placeholder="que souhaitez vous faire" />
-          <input type="submit"id="new-task-submit" value="ajouter" />
-        </form>
-      </header>
-      <main>
-        <section class="task-list">
-          <h2>Taches</h2>
-    
-          <div id="tasks">
-    
-    
-          </div>
-        </section>
-      </main>
-    </body>   
-    <script src="popup js/taches.js"></script>
-    <script src="popup js/dictionary.js"></script>
-    <script src="popup js/monscript.js"></script>
+      </section>
+    </main>
   </body>
+  <script src="popup js/taches.js"></script>
+  <script src="popup js/dictionary.js"></script>
+  <script src="popup js/monscript.js"></script>
+</body>
+
 </html>
