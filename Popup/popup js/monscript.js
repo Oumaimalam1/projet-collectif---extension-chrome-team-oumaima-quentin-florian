@@ -95,19 +95,24 @@ function loadPasswords() {
 }
 
 function deletePassword(index) {
-    // Supprime le mot de passe à l'index spécifié de la liste
+    // Récupère les mots de passe déjà générés
     chrome.storage.local.get('passwords', function (data) {
         var passwords = data.passwords || [];
 
         if (index >= 0 && index < passwords.length) {
-            passwords.splice(index, 1); // Supprime l'élément à l'index spécifié
+            // Supprime le mot de passe de la liste
+            passwords.splice(index, 1);
+
+            // Stocke les mots de passe mis à jour dans le local storage
             chrome.storage.local.set({ 'passwords': passwords }, function () {
                 console.log('Mot de passe supprimé');
-                loadPasswords(); // Recharge la liste des mots de passe après la suppression
+                loadPasswords();
             });
         }
     });
 }
+
+
 
 document.addEventListener('DOMContentLoaded', function () {
     var genererButton = document.querySelector(".button");
