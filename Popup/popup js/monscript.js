@@ -23,14 +23,14 @@ window.onload = function () {
     var fonctionnalite3 = document.getElementById("fonctionnalite3");
 
     // Restaure les états des boutons à partir du stockage local
-    chrome.storage.local.get(
-        ["fonctionnalite1", "fonctionnalite2", "fonctionnalite3"],
-        function (result) {
-            fonctionnalite1.checked = result.fonctionnalite1;
-            fonctionnalite2.checked = result.fonctionnalite2;
-            fonctionnalite3.checked = result.fonctionnalite3;
-        }
-    );
+    /* chrome.storage.local.get(
+      ["fonctionnalite1", "fonctionnalite2", "fonctionnalite3"],
+      function (result) {
+        fonctionnalite1.checked = result.fonctionnalite1;
+        fonctionnalite2.checked = result.fonctionnalite2;
+        fonctionnalite3.checked = result.fonctionnalite3;
+      }
+    );*/
 
     // Enregistre les états des boutons dans le stockage local lorsqu'ils sont modifiés
     fonctionnalite1.addEventListener("click", function () {
@@ -56,35 +56,36 @@ function generatePassword(length) {
 
 function savePassword(password) {
     // Récupère les mots de passe déjà générés
-    chrome.storage.local.get('passwords', function (data) {
+    chrome.storage.local.get("passwords", function (data) {
         var passwords = data.passwords || [];
 
         // Ajoute le nouveau mot de passe à la liste
         passwords.push(password);
 
         // Stocke les mots de passe mis à jour dans le local storage
-        chrome.storage.local.set({ 'passwords': passwords }, function () {
-            console.log('Mot de passe enregistré :', password);
+        chrome.storage.local.set({ passwords: passwords }, function () {
+            console.log("Mot de passe enregistré :", password);
         });
     });
 }
 
 function loadPasswords() {
     // Récupère les mots de passe déjà générés
-    chrome.storage.local.get('passwords', function (data) {
+    chrome.storage.local.get("passwords", function (data) {
         var passwords = data.passwords || [];
 
         // Affiche les mots de passe dans la page
-        var passwordList = document.getElementById('passwordList');
-        passwordList.innerHTML = '';
+        var passwordList = document.getElementById("passwordList");
+        passwordList.innerHTML = "";
 
         passwords.forEach(function (password, index) {
-            var listItem = document.createElement('li');
+            var listItem = document.createElement("li");
             listItem.textContent = password;
 
-            var deleteButton = document.createElement('button');
-            deleteButton.textContent = 'Supprimer';
-            deleteButton.addEventListener('click', function () {
+            var deleteButton = document.createElement("button");
+            deleteButton.textContent = "Supprimer";
+            deleteButton.className = "delete-button";
+            deleteButton.addEventListener("click", function () {
                 deletePassword(index);
             });
 
@@ -96,7 +97,7 @@ function loadPasswords() {
 
 function deletePassword(index) {
     // Récupère les mots de passe déjà générés
-    chrome.storage.local.get('passwords', function (data) {
+    chrome.storage.local.get("passwords", function (data) {
         var passwords = data.passwords || [];
 
         if (index >= 0 && index < passwords.length) {
@@ -104,17 +105,15 @@ function deletePassword(index) {
             passwords.splice(index, 1);
 
             // Stocke les mots de passe mis à jour dans le local storage
-            chrome.storage.local.set({ 'passwords': passwords }, function () {
-                console.log('Mot de passe supprimé');
+            chrome.storage.local.set({ passwords: passwords }, function () {
+                console.log("Mot de passe supprimé");
                 loadPasswords();
             });
         }
     });
 }
 
-
-
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
     var genererButton = document.querySelector(".button");
     var tailleInput = document.querySelector("#taille");
 

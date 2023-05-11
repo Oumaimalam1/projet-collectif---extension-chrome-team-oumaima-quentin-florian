@@ -8,8 +8,8 @@
 </head>
 
 <body>
-  <h1>Bonjour</h1>
-  <h2>Choississez une fonctionnalité</h2>
+  <h1 class="title">Bonjour</h1>
+  <h2 class="sub-title">Choississez une fonctionnalité</h2>
   <div class="toggle-container">
     <div class="inline">
       <label class="switch">
@@ -32,21 +32,24 @@
         <input type="checkbox" id="fonctionnalite3" />
         <span class="slider round"></span>
       </label>
-      <span class="label">Dictionnaire</span>
+      <span class="label">Dictionnaire Anglais </span>
     </div>
+  </div>
   </div>
   <img src="../Img/morse.png" alt="Icon Morse">
 
   <div class="modal" id="modalGen">
     <div class="modal-back"></div>
     <div class="modal-container">
-      <h1>Génerateur mot de passe</h1>
+      <h1 class="title">Génerateur mot de passe</h1>
       <input type="text" id="taille" placeholder="tapez la taille en chiffre" />
       <button class="button">Génerer</button>
       <p id="mdp"></p>
       <div>
         <h2>Mots de passe générés</h2>
-        <ul id="passwordList"></ul>
+        <div class="list-container">
+          <ul class="list" id="passwordList"></ul>
+        </div>
       </div>
       <button class="modal-close" id="modal-gen-close">fermer</button>
     </div>
@@ -55,7 +58,7 @@
   <div class="modal" id="modalDic">
     <div class="modal-back"></div>
     <div class="modal-container">
-      <h1>Dictionnaire</h1>
+      <h1 class="title">Dictionnaire Anglais</h1>
       <div class="dicoapp">
         <div id="searchBar">
           <input type="text" id="text" placeholder="rechercher" />
@@ -67,30 +70,25 @@
     </div>
   </div>
 
-  <html>
+  <div class="modal" id="modalTask">
+    <div class="modal-back"></div>
+    <div class="modal-container">
+      <h1 class="title">To do list</h1>
+      <form id="new-task-form">
+        <input type="text" name="new-task-input" id="new-task-input" placeholder="que souhaitez vous faire"
+          class="inputToDoList" />
+        <input type="submit" id="new-task-submit" value="ajouter" class="buttonToDoList" />
+      </form>
 
-  <body>
-    <div class="modal" id="modalTask">
-      <div class="modal-back"></div>
-      <div class="modal-container">
-        <header>
-          <h1>To do list</h1>
-          <form id="new-task-form">
-            <input type="text" name="new-task-input" id="new-task-input" placeholder="que souhaitez vous faire"
-              class="inputToDoList" />
-            <input type="submit" id="new-task-submit" value="ajouter" class="buttonToDoList" />
-          </form>
-          <main>
-            <section class="task-list">
-              <h2>Taches</h2>
+      <section class="task-list">
+        <h2>Taches</h2>
 
-              <div id="tasks">
+        <div id="tasks"></div>
+      </section>
+      <button class="modal-close" id="modal-task-close">fermer</button>
+    </div>
+  </div>
 
-              </div>
-            </section>
-          </main>
-        </header>
-  </body>
   <script src="popup js/taches.js"></script>
   <script src="popup js/dictionary.js"></script>
   <script src="popup js/monscript.js"></script>
