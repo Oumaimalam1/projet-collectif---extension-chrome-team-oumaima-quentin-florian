@@ -17,12 +17,6 @@
     "icons": {
         "128": "Img/morse.png"
     },
-    "_execute_action": {
-        "suggested_key": {
-            "windows": "Ctrl+Shift+O",
-            "mac": "Command+Shift+O"
-        }
-    },
     "background": {
         "service_worker": "Popup/popup js/monscript.js"
     }

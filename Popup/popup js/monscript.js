@@ -22,15 +22,6 @@ window.onload = function () {
     var fonctionnalite2 = document.getElementById("fonctionnalite2");
     var fonctionnalite3 = document.getElementById("fonctionnalite3");
 
-    // Restaure les états des boutons à partir du stockage local
-    /* chrome.storage.local.get(
-      ["fonctionnalite1", "fonctionnalite2", "fonctionnalite3"],
-      function (result) {
-        fonctionnalite1.checked = result.fonctionnalite1;
-        fonctionnalite2.checked = result.fonctionnalite2;
-        fonctionnalite3.checked = result.fonctionnalite3;
-      }
-    );*/
 
     // Enregistre les états des boutons dans le stockage local lorsqu'ils sont modifiés
     fonctionnalite1.addEventListener("click", function () {
@@ -129,3 +120,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
     loadPasswords();
 });
+
+document.getElementById("fonctionnalite1").addEventListener("click", function () {
+    document.querySelector(".first-page-image").style.display = "none";
+});
+
+document.getElementById("fonctionnalite2").addEventListener("click", function () {
+    document.querySelector(".first-page-image").style.display = "none";
+});
+
+document.getElementById("fonctionnalite3").addEventListener("click", function () {
+    document.querySelector(".first-page-image").style.display = "none";
+});
+
+document.getElementById("modal-gen-close").addEventListener("click", function () {
+    document.querySelector(".first-page-image").style.display = "block";
+});
+
+document.getElementById("modal-dic-close").addEventListener("click", function () {
+    document.querySelector(".first-page-image").style.display = "block";
+});
+
+document.getElementById("modal-task-close").addEventListener("click", function () {
+    document.querySelector(".first-page-image").style.display = "block";
+});
+
