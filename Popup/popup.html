@@ -1,106 +1,97 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Extension avec des boutons à bascule</title>
-    <link rel="stylesheet" href="popup css/style_popup.css" />
-  </head>
-  <body>
-    <h1 class="title">Bonjour</h1>
-    <h2 class="sub-title">Choississez une fonctionnalité</h2>
-    <div class="toggle-container">
-      <div class="inline">
-        <label class="switch">
-          <input type="checkbox" id="fonctionnalite1" />
-          <span class="slider round"></span>
-        </label>
-        <span class="label">Géneration mot de passe</span>
-      </div>
 
-      <div class="inline">
-        <label class="switch">
-          <input type="checkbox" id="fonctionnalite2" />
-          <span class="slider round"></span>
-        </label>
-        <span class="label">To do list</span>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <title>Extension avec des boutons à bascule</title>
+  <link rel="stylesheet" href="popup css/style_popup.css" />
+</head>
 
-      <div class="inline">
-        <label class="switch">
-          <input type="checkbox" id="fonctionnalite3" />
-          <span class="slider round"></span>
-        </label>
-        <span class="label">Dictionnaire Anglais </span>
-      </div>
+<body>
+  <h1 class="title">Bonjour</h1>
+  <h2 class="sub-title">Choississez une fonctionnalité</h2>
+  <div class="toggle-container">
+    <div class="inline">
+      <label class="switch">
+        <input type="checkbox" id="fonctionnalite1" />
+        <span class="slider round"></span>
+      </label>
+      <span class="label">Géneration mot de passe</span>
     </div>
 
-    <div class="modal" id="modalGen">
-      <div class="modal-back"></div>
-      <div class="modal-container">
-        <h1 class="title">Génerateur mot de passe</h1>
-        <input
-          type="text"
-          id="taille"
-          placeholder="tapez la taille en chiffre"
-        />
-        <button class="button">Génerer</button>
-        <p id="mdp"></p>
-        <div>
-          <h2>Mots de passe générés</h2>
-          <div class="list-container">
-            <ul class="list" id="passwordList"></ul>
-          </div>
+    <div class="inline">
+      <label class="switch">
+        <input type="checkbox" id="fonctionnalite2" />
+        <span class="slider round"></span>
+      </label>
+      <span class="label">To do list</span>
+    </div>
+
+    <div class="inline">
+      <label class="switch">
+        <input type="checkbox" id="fonctionnalite3" />
+        <span class="slider round"></span>
+      </label>
+      <span class="label">Dictionnaire Anglais </span>
+    </div>
+  </div>
+  </div>
+  <img src="../Img/morse.png" alt="Icon Morse">
+
+  <div class="modal" id="modalGen">
+    <div class="modal-back"></div>
+    <div class="modal-container">
+      <h1 class="title">Génerateur mot de passe</h1>
+      <input type="text" id="taille" placeholder="tapez la taille en chiffre" />
+      <button class="button">Génerer</button>
+      <p id="mdp"></p>
+      <div>
+        <h2>Mots de passe générés</h2>
+        <div class="list-container">
+          <ul class="list" id="passwordList"></ul>
         </div>
-        <button class="modal-close" id="modal-gen-close">fermer</button>
       </div>
+      <button class="modal-close" id="modal-gen-close">fermer</button>
     </div>
+  </div>
 
-    <div class="modal" id="modalDic">
-      <div class="modal-back"></div>
-      <div class="modal-container">
-        <h1 class="title">Dictionnaire Anglais</h1>
-        <div class="dicoapp">
-          <div id="searchBar">
-            <input type="text" id="text" placeholder="rechercher" />
-            <button class="btn" id="searchDic">search</button>
-          </div>
-          <div id="resultat"></div>
+  <div class="modal" id="modalDic">
+    <div class="modal-back"></div>
+    <div class="modal-container">
+      <h1 class="title">Dictionnaire Anglais</h1>
+      <div class="dicoapp">
+        <div id="searchBar">
+          <input type="text" id="text" placeholder="rechercher" />
+          <button class="btn" id="searchDic">search</button>
         </div>
-        <button class="modal-close" id="modal-dic-close">fermer</button>
+        <div id="resultat"></div>
       </div>
+      <button class="modal-close" id="modal-dic-close">fermer</button>
     </div>
+  </div>
 
-    <div class="modal" id="modalTask">
-      <div class="modal-back"></div>
-      <div class="modal-container">
-        <h1 class="title">To do list</h1>
-        <form id="new-task-form">
-          <input
-            type="text"
-            name="new-task-input"
-            id="new-task-input"
-            placeholder="que souhaitez vous faire"
-            class="inputToDoList"
-          />
-          <input
-            type="submit"
-            id="new-task-submit"
-            value="ajouter"
-            class="buttonToDoList"
-          />
-        </form>
+  <div class="modal" id="modalTask">
+    <div class="modal-back"></div>
+    <div class="modal-container">
+      <h1 class="title">To do list</h1>
+      <form id="new-task-form">
+        <input type="text" name="new-task-input" id="new-task-input" placeholder="que souhaitez vous faire"
+          class="inputToDoList" />
+        <input type="submit" id="new-task-submit" value="ajouter" class="buttonToDoList" />
+      </form>
 
         <section class="task-list">
-          <h2 class="sub-title">Taches</h2>
+          <h2 class="sub-title" id="sub-title-police">Taches</h2>
 
-          <div id="tasks"></div>
-        </section>
-        <button class="modal-close" id="modal-task-close">fermer</button>
-      </div>
+        <div id="tasks"></div>
+      </section>
+      <button class="modal-close" id="modal-task-close">fermer</button>
     </div>
+  </div>
 
-    <script src="popup js/taches.js"></script>
-    <script src="popup js/dictionary.js"></script>
-    <script src="popup js/monscript.js"></script>
-  </body>
+  <script src="popup js/taches.js"></script>
+  <script src="popup js/dictionary.js"></script>
+  <script src="popup js/monscript.js"></script>
+</body>
+
 </html>
