@@ -1,19 +1,19 @@
-// document
-//   .getElementById("fonctionnalite2")
-//   .addEventListener("click", function (e) {
-//     var checkbox = e.target;
-//     if (checkbox.checked) {
-//       document.getElementById("modalTask").style.display = "block";
-//     } else {
-//       document.getElementById("modalTask").style.display = "none";
-//     }
-//   });
-// document
-//   .getElementById("modal-task-close")
-//   .addEventListener("click", function (e) {
-//     document.getElementById("modalTask").style.display = "none";
-//     document.getElementById("fonctionnalite2").checked = false;
-//   });
+document
+  .getElementById("fonctionnalite2")
+  .addEventListener("click", function (e) {
+    var checkbox = e.target;
+    if (checkbox.checked) {
+      document.getElementById("modalTask").style.display = "block";
+    } else {
+      document.getElementById("modalTask").style.display = "none";
+    }
+  });
+document
+  .getElementById("modal-task-close")
+  .addEventListener("click", function (e) {
+    document.getElementById("modalTask").style.display = "none";
+    document.getElementById("fonctionnalite2").checked = false;
+  });
 
 window.addEventListener("load", () => {
   const form = document.querySelector("#new-task-form");
