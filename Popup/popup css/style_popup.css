@@ -248,6 +248,7 @@ span {
 .task {
   display: flex;
   flex-direction: column;
+  margin-bottom: 10px;
 }
 
 .actions {
@@ -256,29 +257,38 @@ span {
 }
 
 .actions .modifier {
-  flex-basis: 50%;
+  justify-content: left;
+  width: 50%;
   height: 25px;
   border: 0;
   background-color: #7f56da;
   color: #fff;
   cursor: pointer;
   border-radius: 0 0 0 7px;
+  border: black solid 1px;
 }
 
 .actions .delete {
-  flex-basis: 50%;
+  justify-content: right;
+  width: 50%; 
   height: 25px;
   border: 0;
   background-color: #7f56da;
   color: #fff;
   cursor: pointer;
   border-radius: 0 0 7px 0;
+  border: black solid 1px;
 }
 
 .task .text {
-  width: 100%;
+  width: 97.8%;
   height: 30px;
   border-radius: 7px 7px 0 0;
   border: black solid 1px;
+}
+
+.titre {
+  text-align: center;
+  color: red;
 }
 
