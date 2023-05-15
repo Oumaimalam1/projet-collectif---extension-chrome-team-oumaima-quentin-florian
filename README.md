@@ -10,12 +10,19 @@ Le développement de cette extension a été réalisé par une équipe de trois 
 <img width="223" alt="extentio" src="https://github.com/Oumaimalam1/projet-collectif---extension-chrome-team-oumaima-quentin-florian/assets/124173725/8cfc13a6-9382-443a-8d95-622deeeaca3c">
 
 
+
+
+
+
 Installation:
 
 Clonez ce dépôt sur votre machine locale 
 
 
 Ouvrez le fichier Popup.html dans votre navigateur préféré.
+
+
+
 
 Fonctionnalités:
 
@@ -32,6 +39,11 @@ Cliquez sur le bouton "Générer un mot de passe".
 Précisez la longueur souhaités pour votre mot de passe.
 
 Cliquez sur le bouton "Générer" pour obtenir votre mot de passe sécurisé.
+
+
+
+
+
 
 
 2. Dictionnaire anglais:
@@ -52,6 +64,11 @@ La définition du mot sera affichée sous la barre de recherche.
 
 
 
+
+
+
+
+
 3. Liste de tâches à faire (To-Do List)
 
 
@@ -69,15 +86,27 @@ Appuyez sur le bouton à côté de la tâche pour la modifier.
 Cliquez sur bouton delete pour supprimer une tâche de la liste.
 
 
+
+
+
+
+
 Contributeurs:
 
 Ce projet a été développé par une équipe de trois personnes 
 
 Florian, Quentin et Oumaima.
 
+
+
+
 Remerciements
 
 Nous tenons à remercier tous ceux qui ont contribué à ce projet et à son développement. Vos suggestions, commentaires et contributions sont les bienvenus !
+ 
+ 
+ 
+ 
  
  Auteure:
  
