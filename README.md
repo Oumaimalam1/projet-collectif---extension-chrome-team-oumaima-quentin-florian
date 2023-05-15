@@ -11,6 +11,7 @@ Le développement de cette extension a été réalisé par une équipe de trois 
 
 
 Installation:
+
 Clonez ce dépôt sur votre machine locale 
 
 
